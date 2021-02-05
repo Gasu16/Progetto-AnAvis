@@ -1,16 +1,16 @@
 <div class="container">
     <div class="card">
-        <h3> PRENOTAZIONI </h3>
+        <h3> EMERGENZE </h3>
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
                     <th>Id</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor = "let prenotazione of prenotazioni">
+                    <tr *ngFor = "let emergenza of emergenze">
                         <td>
-                            {{prenotazione.id}}
-                            {{prenotazione.codice}}
+                            {{emergenza.id}}
+                            {{emergenza.codiceEmergenza}}
                         </td>
                     </tr>
                 </tbody>
