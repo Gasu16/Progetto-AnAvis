@@ -4,4 +4,5 @@ export class Donatore {
     cognome!: String;
     codiceFiscale!: String;
     citta!: String;
+    sangue!: String;
 }
