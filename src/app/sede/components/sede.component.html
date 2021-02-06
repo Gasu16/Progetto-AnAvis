@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card">
+        <h3> SEDI </h3>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <th>Id</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let sede of sedi">
+                        <td>
+                            {{sede.id}}
+                            {{sede.codiceSede}}
+                            {{sede.citta}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

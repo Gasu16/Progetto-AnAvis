@@ -1,3 +1,4 @@
+import { SedeComponent } from './sede/components/sede.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,12 +10,14 @@ import { PrenotazioneComponent } from './prenotazione/components/prenotazione.co
 import { EmergenzaComponent } from './emergenza/components/emergenza.component';
 import { DonatoreComponent } from './donatore/components/donatore.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     PrenotazioneComponent,
     EmergenzaComponent,
-    DonatoreComponent
+    DonatoreComponent,
+    SedeComponent
   ],
   imports: [
     BrowserModule,
