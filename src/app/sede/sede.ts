@@ -1,5 +1,5 @@
 export class Sede {
     id!: number;
-    codiceSede!: String;
+    codice!: String;
     citta!: String;
 }
