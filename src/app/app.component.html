@@ -1,5 +1,15 @@
-<h1 class="text-center">SITO AVIS</h1>
-<app-prenotazione></app-prenotazione>
-<app-emergenza></app-emergenza>
-<app-donatore></app-donatore>
-<app-sede></app-sede>
+<h1> AVIS </h1>
+
+<nav>
+    <ul id="menu">
+        <li><a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link"> HOME PAGE </a> </li>
+        <li><a routerLink="/sedi" class="nav-link"> SEDI </a> </li>
+        <li><a routerLink="/donatori" class="nav-link"> DONATORI </a> </li>
+        <li><a routerLink="/prenotazioni" class="nav-link"> PRENOTAZIONI </a> </li>
+        <li><a routerLink="/emergenze" class="nav-link"> EMERGENZE </a> </li>
+    </ul>
+</nav>
+
+<main>
+    <router-outlet></router-outlet>
+</main>

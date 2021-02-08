@@ -1,6 +1,7 @@
 import { SedeService } from './../services/sede.service';
 import { Sede } from './../sede';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sede',
@@ -11,7 +12,10 @@ export class SedeComponent implements OnInit {
 
   sedi!: Sede[];
 
-  constructor(private sedeService: SedeService) { }
+  constructor(
+    private route: ActivatedRoute ,
+    private sedeService: SedeService
+  ) { }
 
   ngOnInit(): void {
     this.sedeService.getSedi().subscribe((data: Sede[]) => {
