@@ -2,8 +2,9 @@ import { SedeComponent } from './sede/components/sede.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
-  {path: 'sedi', component: SedeComponent}
+export const routes: Routes = [
+  {path: 'sedi', component: SedeComponent},
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
