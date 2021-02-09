@@ -12,6 +12,9 @@ import { EmergenzaComponent } from './emergenza/components/emergenza.component';
 import { DonatoreComponent } from './donatore/components/donatore.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/components/home.component';
+import { RegistrazioneComponent } from './registrazione/components/registrazione.component';
+import { LoginComponent } from './login/components/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,12 +25,15 @@ import { HomeComponent } from './home/components/home.component';
     DonatoreComponent,
     SedeComponent,
     HomeComponent,
+    RegistrazioneComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

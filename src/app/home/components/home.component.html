@@ -1,49 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: #e41616;
-}
-</style>
 </head>
 <body>
-    <nav>
+    
+
+      
         <div class="navbar-nav">
             <ul id="menu">
-              
                 <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link"> HOME PAGE</a></li>
+                
                 <li><a routerLink="/sedi" class="nav-link"> SEDI </a> </li>
+                
                 <li><a routerLink="/registrati" class="nav-link"> REGISTRATI </a> </li>
                 <li><a routerLink="/login" class="nav-link"> LOGIN </a> </li>
                 <li><a routerLink="/about" class="nav-link"> ABOUT </a> </li>
             </ul>
         </div>
-    </nav>
+      
+    
     <router-outlet></router-outlet>
     <img class="logo" src="/assets/images/Avis_logo.png" alt="...">
 </body>
