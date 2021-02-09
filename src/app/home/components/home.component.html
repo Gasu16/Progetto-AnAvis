@@ -5,20 +5,25 @@
 <body>
     
 
-      
+    <nav>
+
+
         <div class="navbar-nav">
             <ul id="menu">
-                <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link"> HOME PAGE</a></li>
+                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link"> HOME PAGE</a>
+                    
+                </li>
+                <li><a routerLink="/sedi" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link"> SEDI </a></li>
                 
-                <li><a routerLink="/sedi" class="nav-link"> SEDI </a> </li>
                 
-                <li><a routerLink="/registrati" class="nav-link"> REGISTRATI </a> </li>
+                
+                <li><a routerLink="/registrazione" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link"> REGISTRATI </a> </li>
                 <li><a routerLink="/login" class="nav-link"> LOGIN </a> </li>
                 <li><a routerLink="/about" class="nav-link"> ABOUT </a> </li>
             </ul>
         </div>
       
-    
+    </nav>    
     <router-outlet></router-outlet>
     <img class="logo" src="/assets/images/Avis_logo.png" alt="...">
 </body>

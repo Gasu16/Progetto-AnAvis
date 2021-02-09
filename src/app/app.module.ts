@@ -34,7 +34,12 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(
+      [
+        {path: 'sedi', component: SedeComponent},
+        {path: 'registrazione', component: RegistrazioneComponent}
+      ]
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

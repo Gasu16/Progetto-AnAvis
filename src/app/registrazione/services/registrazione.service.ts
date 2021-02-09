@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class RegistrazioneService {
 
-  constructor() { }
+  private baseUrl = "http://localhost:8080/api/registrazione";
+
+  constructor(private http: HttpClient) { }
+  gotoRegistrazione(): void{
+    this.http.get(`${this.baseUrl}`);
+  }
 }

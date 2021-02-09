@@ -23,17 +23,21 @@ export class SedeComponent implements OnInit {
   ) { }
 
   buttonClick(): void{
-    //alert("lmaooooo");
     let url = "http://localhost:8080/api/sedi"
     let urladd = "http://localhost:8080/api/delsede?codice="
 /*    this.http.post(urladd+this.codice, this.codice).subscribe(
       res => {location.reload},
       err => {alert("Errore nella richiesta POST [sede.component.ts]")}
     );*/
+    
     this.http.get(url+"/"+this.codice).subscribe(
       res => {location.reload},
       err => {alert("Errore nella richiesta GET [sede.component.ts]")}
     );
+  }
+
+  sede_click(): void{
+    this.router.navigateByUrl("sedi");
   }
 
   ngOnInit(): void {
