@@ -11,6 +11,7 @@
                         <td>
                             {{datas.id}}
                             {{datas.data}}
+                            {{datas.codice}}
                         </td>
                     </tr>
                 </tbody>
@@ -18,3 +19,19 @@
         </div>
     </div>
 </div>
+<form name="form" #f="ngForm" (ngSubmit)="buttonData()">
+
+    <div class="form-group">
+        <label for="codice">DATA</label>
+        <input type="text"
+        id="codice"
+        class="form-control"
+        name="codice"
+        placeholder="codice sede"
+        [(ngModel)]=codice/>
+        
+        <button type="submit">
+            SCEGLI DATA
+        </button>
+    </div>
+</form>

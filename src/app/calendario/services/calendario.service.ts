@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 })
 export class CalendarioService {
 
-  private baseUrl = "http://localhost:8080/api/date";
+  private baseUrl = "http://localhost:8080/api/date/";
 
   constructor(private http: HttpClient) { }
 

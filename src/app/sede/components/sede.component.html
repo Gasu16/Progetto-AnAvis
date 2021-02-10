@@ -7,7 +7,7 @@
     <title>SEDI TITOLO</title>
     </head>
 
-    <div class="container">
+    <div class="container" *ngIf="view=='1'">
         <div class="card">
             <h3> SEDI </h3>
             <div class="card-body">
@@ -45,6 +45,26 @@
         </div>
     </form>
 
-    <button onclick="location.href='date'" type="button">GET DATE</button>
+    <div class="container" *ngIf="view=='2'">
+        <div class="card">
+            <h3> DATE </h3>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <th>Id</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let datas of date">
+                            <td>
+                                {{datas.id}}
+                                {{datas.data}}
+                                {{datas.codice}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
 </html>

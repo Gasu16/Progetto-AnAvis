@@ -14,15 +14,25 @@ export class CalendarioComponent implements OnInit {
 
   private id!: number;
   date!: Calendario[]; // Lista di date Calendario
-  data!: String; // Questa è una data (singola)
-  dati!: String; // Questi sono i dati
-  
+  data!: string; // Questa è una data (singola)
+  dati!: string; // Questi sono i dati
+  codice!: string;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private calendarioService: CalendarioService,
     private http: HttpClient
   ) { }
+
+  buttonData(): void{
+    let urldata = "http://localhost:8080/api/date";
+    this.calendarioService.getDateBySede(this.codice).subscribe((dati: Calendario[]) => {
+      console.log("BUTTON DATA\n");
+      console.log(dati);
+      this.date = dati;
+    });
+  }
 
   ngOnInit(): void {
     this.calendarioService.getDate().subscribe((dati: Calendario[]) => {
