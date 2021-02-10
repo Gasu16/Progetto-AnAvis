@@ -15,6 +15,7 @@ import { HomeComponent } from './home/components/home.component';
 import { RegistrazioneComponent } from './registrazione/components/registrazione.component';
 import { LoginComponent } from './login/components/login.component';
 import { FormsModule } from '@angular/forms';
+import { CalendarioComponent } from './calendario/components/calendario.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     RegistrazioneComponent,
     LoginComponent,
+    CalendarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,8 +38,10 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     RouterModule.forRoot(
       [
+        {path: 'home', component: HomeComponent},
         {path: 'sedi', component: SedeComponent},
-        {path: 'registrazione', component: RegistrazioneComponent}
+        {path: 'registrazione', component: RegistrazioneComponent},
+        {path: 'date', component: CalendarioComponent}
       ]
     )
   ],

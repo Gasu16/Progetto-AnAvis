@@ -1,3 +1,4 @@
+import { CalendarioComponent } from './calendario/components/calendario.component';
 import { RegistrazioneComponent } from './registrazione/components/registrazione.component';
 import { Home } from './home/home';
 import { AppComponent } from './app.component';
@@ -5,11 +6,14 @@ import { HomeComponent } from './home/components/home.component';
 import { SedeComponent } from './sede/components/sede.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { compileDirectiveFromMetadata } from '@angular/compiler';
 
 export const routes: Routes = [
 //  {path: '', redirectTo: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'sedi', component: SedeComponent},
-  {path: 'registrazione', component: RegistrazioneComponent}
+  {path: 'registrazione', component: RegistrazioneComponent},
+  {path: 'date', component: CalendarioComponent}
   //{path: '**', redirectTo: ''}
 ];
 
