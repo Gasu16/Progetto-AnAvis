@@ -29,7 +29,11 @@ export class SedeComponent implements OnInit {
     private http: HttpClient
   ) { }
 
-  
+  onItemChange(value: string){
+    value = this.data;
+    console.log(value);
+  }
+
   buttonClick(): void{
     // Questo è quello che succede quando premiamo il bottone SCEGLI SEDE
     let url = "http://localhost:8080/api/sedi"
@@ -42,29 +46,20 @@ export class SedeComponent implements OnInit {
       this.date = data;
       this.view='2';
     });
-    // Ci ritorna in pagina la sede che abbiamo scelto in base al codice
-    // Praticamente leggiamo la risposta alla richiesta http GET che abbiamo mandato a spring
-    // E con this.sedi = data poi la stampiamo nel file sede.component.html
-    // Precisamente dove c'è il ciclo for: *ngFor = "let sede of sedi"
-    
-    /*
-    this.sedeService.getSediparam(this.codice).subscribe((data: Sede[]) => {
-      console.log("GET SEDI PARAM\n");
-      console.log(data);
-      this.sedi = data;
-      this.dateCal.buttonData();
-      // Serve a navigare in un'altra pagina passandogli il link
-//      this.router.navigateByUrl("sedi/"+data);
-    });
 
-    // Qui mandiamo una richiesta http GET per conoscere le date
-    this.http.get(urlgetdata).subscribe(
+  }
+
+  inviaData(): void{
+  /*
+    let urlpostdate = "http://localhost:8080/api/date";
+    this.calendarioService.postDate(this.data).subscribe(
+            
       res => {location.reload},
-      err => {alert("Errore nel get date [sede.component.ts]")}
-    );
-    //this.view = '2';
-    */
-    
+      err => {alert("Errore in inviaData() in sede.component.ts")}
+      //console.log("Sto inviando i dati al server...\n");
+      //console.log(d);
+    );*/
+    console.log("Sto inviando i dati al server...");
   }
 
 

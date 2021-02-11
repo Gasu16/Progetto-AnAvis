@@ -7,7 +7,9 @@
     <title>SEDI TITOLO</title>
     </head>
 
+
     <div class="container" *ngIf="view=='1'">
+        
         <div class="card">
             <h3> SEDI </h3>
             <div class="card-body">
@@ -28,21 +30,21 @@
             </div>
         </div>
     </div>
-    <form name="form" #f="ngForm" (ngSubmit)="buttonClick()">
-
-    <div class="form-group">
-        <label for="codice">CODICE</label>
-        <input type="text"
-        id="codice"
-        class="form-control"
-        name="codice"
-        placeholder="codice sede"
-        [(ngModel)]=codice/>
-        
-        <button type="submit">
-            SCEGLI SEDE
-        </button>
-        </div>
+    
+    <form name="form" #f="ngForm" (ngSubmit)="buttonClick()" *ngIf="view=='1'">
+        <div class="form-group">
+            <label for="codice">CODICE</label>
+            <input type="text"
+            id="codice"
+            class="form-control"
+            name="codice"
+            placeholder="codice sede"
+            [(ngModel)]=codice/>
+            
+            <button type="submit">
+                SCEGLI SEDE
+            </button>
+            </div>
     </form>
 
     <div class="container" *ngIf="view=='2'">
@@ -51,14 +53,19 @@
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
-                        <th>Id</th>
+                        <th>LISTA DATE RECUPERATE</th>
                     </thead>
                     <tbody>
                         <tr *ngFor = "let datas of date">
                             <td>
-                                {{datas.id}}
-                                {{datas.data}}
-                                {{datas.codice}}
+                                <input type="radio" name="date" id="dataId" value="data">
+                                <label for="dataId">
+                                    DATA:
+                                    {{datas.data}}
+                                    --
+                                    CODICE:
+                                    {{datas.codice}}
+                                </label>
                             </td>
                         </tr>
                     </tbody>
@@ -66,5 +73,14 @@
             </div>
         </div>
     </div>
+
+    <form name="form" #f="ngForm" (ngSubmit)="inviaData()" *ngIf="view=='2'">
+        <div class="form-group">
+            <label for="dataId"></label>            
+            <button type="submit">
+                CONFERMA DATA
+            </button>
+        </div>
+    </form>
 
 </html>

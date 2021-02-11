@@ -26,7 +26,7 @@ export class CalendarioComponent implements OnInit {
   ) { }
 
   buttonData(): void{
-    let urldata = "http://localhost:8080/api/date";
+    let urldata = "http://localhost:8080/api/aggdate";
     this.calendarioService.getDateBySede(this.codice).subscribe((dati: Calendario[]) => {
       console.log("BUTTON DATA\n");
       console.log(dati);
