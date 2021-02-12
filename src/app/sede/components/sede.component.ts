@@ -29,17 +29,18 @@ export class SedeComponent implements OnInit {
     private http: HttpClient
   ) { }
 
-  onItemChange(value: string){
+/*  onItemChange(value: string){
     value = this.data;
     console.log(value);
-  }
+  }*/
 
   buttonClick(): void{
     // Questo è quello che succede quando premiamo il bottone SCEGLI SEDE
     let url = "http://localhost:8080/api/sedi"
     let urladd = "http://localhost:8080/api/delsede?codice="
     let urlgetdata = "http://localhost:8080/api/date" 
-
+    console.log("Ecco il codice: ");
+    console.log(this.codice);
     this.calendarioService.getDateBySede(this.codice).subscribe((data: Calendario[]) => {
       console.log("BUTTON DATA\n");
       console.log(data);
@@ -50,15 +51,16 @@ export class SedeComponent implements OnInit {
   }
 
   inviaData(): void{
-  /*
-    let urlpostdate = "http://localhost:8080/api/date";
+    console.log("Ecco la data: ");
+    console.log(this.data);
+    let urlpostdate = "http://localhost:8080/api/deldata?data=";
     this.calendarioService.postDate(this.data).subscribe(
             
       res => {location.reload},
       err => {alert("Errore in inviaData() in sede.component.ts")}
       //console.log("Sto inviando i dati al server...\n");
       //console.log(d);
-    );*/
+    );
     console.log("Sto inviando i dati al server...");
   }
 
