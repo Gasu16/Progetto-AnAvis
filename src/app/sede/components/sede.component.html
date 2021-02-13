@@ -58,7 +58,7 @@
                     <tbody>
                         <tr *ngFor = "let datas of date">
                             <td>
-                                <input type="radio" name="date" id="dataId" value="data">
+                                <input type="radio" name="date" id="dataId" [value]="datas.data" [(ngModel)]="data">
                                 <label for="dataId">
                                     DATA:
                                     {{datas.data}}
