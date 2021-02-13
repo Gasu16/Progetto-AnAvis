@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class CalendarioService {
 
   private baseUrl = "http://localhost:8080/api/date/";
-  private adate = "http://localhost:8080/api/deldata?data=";
+  private adate = "http://localhost:8080/api/deldata?id=";
   constructor(private http: HttpClient) { }
 
   getDate(): Observable<Calendario[]>{
@@ -20,7 +20,7 @@ export class CalendarioService {
     return this.http.get<Calendario[]>(`${this.baseUrl}`+codice);
   }
 
-  postDate(data: string): Observable<Calendario[]>{
-    return this.http.post<Calendario[]>(`${this.adate}`+data, data);
+  postDate(id: number): Observable<Calendario[]>{
+    return this.http.post<Calendario[]>(`${this.adate}`+id , id);
   }
 }

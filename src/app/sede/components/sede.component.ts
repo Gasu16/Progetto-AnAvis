@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class SedeComponent implements OnInit {
 
-  private id!: number;
+  id!: number;
   sedi!: Sede[];
   codice!: string;
   data!: string;
@@ -91,8 +91,8 @@ export class SedeComponent implements OnInit {
   inviaData(): void{
     console.log("Ecco la data: ");
     console.log(this.data);
-    let urlpostdate = "http://localhost:8080/api/deldata?data=";
-    this.calendarioService.postDate(this.data).subscribe(
+    let urlpostdate = "http://localhost:8080/api/deldata?id=";
+    this.calendarioService.postDate(this.id).subscribe(
             
       res => {location.reload},
       err => {alert("Errore in inviaData() in sede.component.ts")}
