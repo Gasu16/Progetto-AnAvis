@@ -16,6 +16,7 @@ import { RegistrazioneComponent } from './registrazione/components/registrazione
 import { LoginComponent } from './login/components/login.component';
 import { FormsModule } from '@angular/forms';
 import { CalendarioComponent } from './calendario/components/calendario.component';
+import { QuestionarioComponent } from './questionario/components/questionario.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { CalendarioComponent } from './calendario/components/calendario.componen
     RegistrazioneComponent,
     LoginComponent,
     CalendarioComponent,
+    QuestionarioComponent,
   ],
   imports: [
     BrowserModule,
