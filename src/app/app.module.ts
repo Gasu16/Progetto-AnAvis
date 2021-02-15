@@ -43,7 +43,8 @@ import { QuestionarioComponent } from './questionario/components/questionario.co
         {path: 'home', component: HomeComponent},
         {path: 'sedi', component: SedeComponent},
         {path: 'registrazione', component: RegistrazioneComponent},
-        {path: 'date', component: CalendarioComponent}
+        {path: 'date', component: CalendarioComponent},
+        {path: 'addemergenza', component: EmergenzaComponent}
       ]
     )
   ],

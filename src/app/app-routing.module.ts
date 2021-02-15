@@ -1,3 +1,4 @@
+import { EmergenzaComponent } from './emergenza/components/emergenza.component';
 import { CalendarioComponent } from './calendario/components/calendario.component';
 import { RegistrazioneComponent } from './registrazione/components/registrazione.component';
 import { Home } from './home/home';
@@ -13,7 +14,8 @@ export const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'sedi', component: SedeComponent},
   {path: 'registrazione', component: RegistrazioneComponent},
-  {path: 'date', component: CalendarioComponent}
+  {path: 'date', component: CalendarioComponent},
+  {path: 'addemergenza', component: EmergenzaComponent}
   //{path: '**', redirectTo: ''}
 ];
 

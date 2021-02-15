@@ -1,20 +1,43 @@
-<div class="container">
-    <div class="card">
-        <h3> EMERGENZE </h3>
-        <div class="card-body">
-            <table class="table table-striped">
-                <thead>
-                    <th>Id</th>
-                </thead>
-                <tbody>
-                    <tr *ngFor = "let emergenza of emergenze">
-                        <td>
-                            {{emergenza.id}}
-                            {{emergenza.codiceEmergenza}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+    <meta charset="utf-8" />
+    <title>INVIA EMERGENZA</title>
+    </head>
+
+    <form name="form" #f="ngForm" (ngSubmit)="inviaRichiesta()">
+
+        <div class="form-group">
+            <label for="codice">CODICE</label>
+            <input type="text"
+            id="codice"
+            class="form-control"
+            name="codice"
+            placeholder="codice emergenza"
+            [(ngModel)]=codiceEmergenza/>
+
+            <label for="codice">CITTÀ</label>
+            <input type="text"
+            id="citta"
+            class="form-control"
+            name="citta"
+            placeholder="città"
+            [(ngModel)]=citta/>
+
+            <label for="codice">GRUPPO SANGUIGNO</label>
+            <input type="text"
+            id="gruppo_sanguigno"
+            class="form-control"
+            name="gruppo_sanguigno"
+            placeholder="gruppo sanguigno"
+            [(ngModel)]=gruppoSanguigno/>
+            
+            <button type="submit">
+                INVIA RICHIESTA
+            </button>
+            </div>
+        </form>
+
+ </html>
