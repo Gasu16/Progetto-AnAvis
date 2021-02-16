@@ -6,7 +6,37 @@
     <title>SCEGLI EMERGENZA</title>
     </head>
 
-    <form name="form" #f="ngForm" (ngSubmit)="elencaEmergenze()" *ngIf="scelta_emergenza_view=='0'">
+    <div class="container" *ngIf="scelta_emergenza_view=='0'">
+        <form name="quiz" name="buttons" id="quiz" (ngSubmit)="gestisciQuiz()">
+
+            <li><div class="question">Attualmente ha problemi di salute?</div></li>
+            <input id="answer" type="radio" name="group1" value="true" [(ngModel)]="risposta1"> SI<br>
+            <input id="answer" type="radio" name="group1" value="false" [(ngModel)]="risposta1"> NO<hr>
+        
+        
+            <li><div class="question">Ha l’AIDS o è portatore del virus HIV o crede di esserlo?</div></li>
+            <input id="answer" type="radio" name="group2" value="true" [(ngModel)]="risposta2">SI<br>
+            <input id="answer" type="radio" name="group2" value="false" [(ngModel)]="risposta2">NO<hr>
+        
+            <li><div class="question">Ha o ha avuto l’epatite B o C o è portatore del virus?</div></li>
+            <input id="answer" type="radio" name="group3" value="true" [(ngModel)]="risposta3"> SI<br>
+            <input id="answer" type="radio" name="group3" value="false" [(ngModel)]="risposta3">NO<hr>
+        
+            <li><div class="question">Ha mai assunto o assume sostanze stupefacenti?</div></li>
+            <input id="answer" type="radio" name="group4" value="true" [(ngModel)]="risposta4"> SI<br>
+            <input id="answer" type="radio" name="group4" value="false" [(ngModel)]="risposta4">NO<hr>
+        
+            <li><div class="question">Ha abusato o abusa di bevande alcoliche?</div></li>
+            <input id="answer" type="radio" name="group5" value="true" [(ngModel)]="risposta5"> SI<br>
+            <input id="answer" type="radio" name="group5" value="false" [(ngModel)]="risposta5">NO<hr>
+            
+            <button type="submit">CONFERMA RISPOSTE</button>
+            
+        </form>
+    </div>
+    
+
+    <form name="form" #f="ngForm" (ngSubmit)="elencaEmergenze()" *ngIf="scelta_emergenza_view=='1'">
 
         <div class="form-group">
 
@@ -33,7 +63,7 @@
     </form>
 
 
-    <div class="container" *ngIf="scelta_emergenza_view=='1'">
+    <div class="container" *ngIf="scelta_emergenza_view=='2'">
         <div class="card">
             <h3> EMERGENZE </h3>
             <div class="card-body">
