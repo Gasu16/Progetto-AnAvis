@@ -12,7 +12,8 @@ export class EmergenzaService {
   private baseUrl1 = "http://localhost:8080/api/addemergenza?codiceEmergenza=";
   private baseUrl2 = "&citta=";
   private baseUrl3 = "&gruppoSanguigno=";
-  
+  private baseUrl4 = "http://localhost:8080/api/scegliemergenza/"
+
   constructor(private http: HttpClient) { }
 
   getEmergenze(): Observable<Emergenza[]>{

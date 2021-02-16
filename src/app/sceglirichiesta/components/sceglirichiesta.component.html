@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8" />
+    <title>SCEGLI EMERGENZA</title>
+    </head>
+
+    <form name="form" #f="ngForm" (ngSubmit)="elencaEmergenze()" *ngIf="scelta_emergenza_view=='0'">
+
+        <div class="form-group">
+
+            <label for="codice">CITTÀ</label>
+            <input type="text"
+            id="citta"
+            class="form-control"
+            name="citta"
+            placeholder="città"
+            [(ngModel)]=citta/>
+
+            <label for="codice">GRUPPO SANGUIGNO</label>
+            <input type="text"
+            id="gruppo_sanguigno"
+            class="form-control"
+            name="gruppo_sanguigno"
+            placeholder="gruppo sanguigno"
+            [(ngModel)]=gruppoSanguigno/>
+            
+            <button type="submit">
+                INVIA RICHIESTA
+            </button>
+        </div>
+    </form>
+
+
+    <div class="container" *ngIf="scelta_emergenza_view=='1'">
+        <div class="card">
+            <h3> EMERGENZE </h3>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <th>Id</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let emergenzas of emergenze">
+                            <td>
+                                <input type="radio" name="emergenz" id="emergenzasId" [value]="emergenzas.citta" [(ngModel)]="citta">
+                                <label for="dataId">
+                                    ID:
+                                    {{emergenzas.id}}
+                                    --
+                                    CITTA:
+                                    {{emergenzas.citta}}
+                                    --
+                                    CODICE:
+                                    {{emergenzas.codiceEmergenza}}
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</html>

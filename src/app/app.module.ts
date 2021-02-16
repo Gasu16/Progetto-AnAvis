@@ -17,6 +17,7 @@ import { LoginComponent } from './login/components/login.component';
 import { FormsModule } from '@angular/forms';
 import { CalendarioComponent } from './calendario/components/calendario.component';
 import { QuestionarioComponent } from './questionario/components/questionario.component';
+import { SceglirichiestaComponent } from './sceglirichiesta/components/sceglirichiesta.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { QuestionarioComponent } from './questionario/components/questionario.co
     LoginComponent,
     CalendarioComponent,
     QuestionarioComponent,
+    SceglirichiestaComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { QuestionarioComponent } from './questionario/components/questionario.co
         {path: 'sedi', component: SedeComponent},
         {path: 'registrazione', component: RegistrazioneComponent},
         {path: 'date', component: CalendarioComponent},
-        {path: 'addemergenza', component: EmergenzaComponent}
+        {path: 'addemergenza', component: EmergenzaComponent},
+        {path: 'scegliemergenza', component: SceglirichiestaComponent}
       ]
     )
   ],

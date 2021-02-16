@@ -7,7 +7,7 @@
     <title>INVIA EMERGENZA</title>
     </head>
 
-    <form name="form" #f="ngForm" (ngSubmit)="inviaRichiesta()">
+    <form name="form" #f="ngForm" (ngSubmit)="inviaRichiesta()" *ngIf="emergenza_view=='0'">
 
         <div class="form-group">
             <label for="codice">CODICE</label>
@@ -37,7 +37,9 @@
             <button type="submit">
                 INVIA RICHIESTA
             </button>
-            </div>
-        </form>
+        </div>
+    </form>
 
- </html>
+
+
+</html>

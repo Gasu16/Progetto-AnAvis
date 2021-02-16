@@ -15,25 +15,31 @@ export class EmergenzaComponent implements OnInit {
   codiceEmergenza!: string;
   citta!: string;
   gruppoSanguigno!: string;
+  public emergenza_view!: string;
 
 
   constructor(
     private emergenzaService: EmergenzaService,
     http: HttpClient
-    ) { }
+  ) { }
 
   inviaRichiesta(): void{ 
 
-    this.emergenzaService.inoltraRichiestaEmergenza(this.codiceEmergenza, this.citta, this.gruppoSanguigno).subscribe((data: Emergenza[]) => {
-      console.log(data);
-      this.emergenze = data;
-    });
+    this.emergenzaService.inoltraRichiestaEmergenza(this.codiceEmergenza, this.citta, this.gruppoSanguigno).subscribe(
+      res => {location.reload},
+      err => {alert("Errore in inviaRichiesta() in emergenza.component.ts")}
+      //console.log(data);
+      //this.emergenze = data;
+      //this.emergenza_view = '1';
+      //this.elencaEmergenze();
+    );
     
   }
 
-
   ngOnInit(): void {
+    this.emergenza_view = '0';
     this.emergenzaService.getEmergenze().subscribe((data: Emergenza[]) => {
+      console.log("EMERGENZA");
       console.log(data);
       this.emergenze = data;
     });
