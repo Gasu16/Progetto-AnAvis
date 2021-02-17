@@ -47,14 +47,6 @@
             name="citta"
             placeholder="città"
             [(ngModel)]=citta/>
-
-            <label for="codice">GRUPPO SANGUIGNO</label>
-            <input type="text"
-            id="gruppo_sanguigno"
-            class="form-control"
-            name="gruppo_sanguigno"
-            placeholder="gruppo sanguigno"
-            [(ngModel)]=gruppoSanguigno/>
             
             <button type="submit">
                 INVIA RICHIESTA
@@ -84,6 +76,9 @@
                                     --
                                     CODICE:
                                     {{emergenzas.codiceEmergenza}}
+                                    --
+                                    GRUPPO SANGUIGNO:
+                                    {{emergenzas.gruppoSanguigno}}
                                 </label>
                             </td>
                         </tr>
