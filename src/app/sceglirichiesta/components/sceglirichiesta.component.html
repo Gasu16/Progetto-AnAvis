@@ -66,7 +66,7 @@
                     <tbody>
                         <tr *ngFor = "let emergenzas of emergenze">
                             <td>
-                                <input type="radio" name="emergenz" id="emergenzasId" [value]="emergenzas.citta" [(ngModel)]="citta">
+                                <input type="radio" name="emergenz" id="emergenzasId" [value]="emergenzas.id" [(ngModel)]="id">
                                 <label for="dataId">
                                     ID:
                                     {{emergenzas.id}}
@@ -87,4 +87,14 @@
             </div>
         </div>
     </div>
+
+    <form name="form" #f="ngForm" (ngSubmit)="inviaEmergenza()" *ngIf="scelta_emergenza_view=='2'">
+        <div class="form-group">
+            <label for="dataId"></label>            
+            <button type="submit">
+                CONFERMA EMERGENZA
+            </button>
+        </div>
+    </form>
+
 </html>

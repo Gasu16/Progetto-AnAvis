@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SceglirichiestaComponent implements OnInit {
 
+  id!: number;
   emergenze!: Emergenza[];
   codiceEmergenza!: string;
   citta!: string;
@@ -64,6 +65,13 @@ export class SceglirichiestaComponent implements OnInit {
     this.scelta_emergenza_view = '2';
   }
 
+  inviaEmergenza(): void{
+    this.sceglirichiestaService.postEmergenza(this.id).subscribe(
+      res => {location.reload},
+      err => {alert("Errore in inviaEmergenza() in sceglirichiesta.component.ts")}
+    );
+    console.log("Sto inviando i dati al server...\n");
+  }
 
   ngOnInit(): void {
     this.scelta_emergenza_view = '0';
