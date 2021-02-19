@@ -66,16 +66,19 @@ export class SceglirichiestaComponent implements OnInit {
   }
 
   inviaEmergenza(): void{
-    this.sceglirichiestaService.postEmergenza(this.id).subscribe(
+    this.sceglirichiestaService.postEmergenza(this.id, this.citta).subscribe(
       res => {location.reload},
-      err => {alert("Errore in inviaEmergenza() in sceglirichiesta.component.ts")}
+      err => {alert("Errore in inviaEmergenza() in sceglirichiesta.component.ts");console.log(err)}
     );
     console.log("Sto inviando i dati al server...\n");
+    
   }
+
 
   ngOnInit(): void {
     this.scelta_emergenza_view = '0';
     //this.elencaEmergenze();
+    
   }
 
 }

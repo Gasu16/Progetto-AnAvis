@@ -1,6 +1,6 @@
 export class Emergenza {
     id!: number;
-    codiceEmergenza!: String;
+    codiceEmergenza!: string;
     citta!: string;
     gruppoSanguigno!: string;
 }
