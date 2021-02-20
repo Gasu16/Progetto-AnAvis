@@ -13,14 +13,14 @@ export class SceglirichiestaService {
 
   constructor(private http: HttpClient) { }
 
-  scegliEmergenze(citta: string): Observable<Emergenza[]>{
-    return this.http.get<Emergenza[]>(`${this.baseUrl}`+citta);
+  scegliEmergenze(citta: string, gruppoSanguigno: string): Observable<Emergenza[]>{
+    return this.http.get<Emergenza[]>(`${this.baseUrl}`+citta+`/`+gruppoSanguigno);
   }
 
-  postEmergenza(id: number, citta: string): Observable<Emergenza[]>{
+  postEmergenza(id: number, citta: string, gruppoSanguigno: string): Observable<Emergenza[]>{
 //    return this.http.post<Emergenza[]>(`${this.baseUrl2}`+id+`&codiceEmergenza=`+codiceEmergenza+`&citta=`+citta+`&grupposanguigno=`+gruppoSanguigno, id);
 //    return this.http.post<Emergenza[]>(`${this.baseUrl2}`+id, id);
-    return this.http.post<Emergenza[]>(`${this.baseUrl2}`+id+`&citta=`+citta, id);
+    return this.http.post<Emergenza[]>(`${this.baseUrl2}`+id+`&citta=`+citta+`&gruppoSanguigno=`+gruppoSanguigno, id);
   }
 
   getAccettazioniEmergenze(id: number): Observable<Emergenza[]>{

@@ -58,7 +58,7 @@ export class SceglirichiestaComponent implements OnInit {
 
 
   elencaEmergenze(): void{
-    this.sceglirichiestaService.scegliEmergenze(this.citta).subscribe((data: Emergenza[]) => {
+    this.sceglirichiestaService.scegliEmergenze(this.citta, this.gruppoSanguigno).subscribe((data: Emergenza[]) => {
       console.log(data);
       this.emergenze = data;
     });
@@ -66,7 +66,7 @@ export class SceglirichiestaComponent implements OnInit {
   }
 
   inviaEmergenza(): void{
-    this.sceglirichiestaService.postEmergenza(this.id, this.citta).subscribe(
+    this.sceglirichiestaService.postEmergenza(this.id, this.citta, this.gruppoSanguigno).subscribe(
       res => {location.reload},
       err => {alert("Errore in inviaEmergenza() in sceglirichiesta.component.ts");console.log(err)}
     );
