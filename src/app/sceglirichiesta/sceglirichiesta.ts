@@ -3,4 +3,5 @@ export class Sceglirichiesta {
     codiceEmergenza!: String;
     citta!: string;
     gruppoSanguigno!: string;
+    donatoriRichiesti!: number;
 }

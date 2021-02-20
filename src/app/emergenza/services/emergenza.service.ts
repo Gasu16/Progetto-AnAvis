@@ -12,6 +12,7 @@ export class EmergenzaService {
   private baseUrl1 = "http://localhost:8080/api/addemergenza?codiceEmergenza=";
   private baseUrl2 = "&citta=";
   private baseUrl3 = "&gruppoSanguigno=";
+  private baseUrl3a = "&donatoriRichiesti=";
   private baseUrl4 = "http://localhost:8080/api/scegliemergenza/"
 
   constructor(private http: HttpClient) { }
@@ -20,8 +21,8 @@ export class EmergenzaService {
     return this.http.get<Emergenza[]>(`${this.baseUrl}`);
   }
 
-  inoltraRichiestaEmergenza(codiceEmergenza: string, citta: string, gruppoSanguigno: string): Observable<Emergenza[]>{
-    return this.http.post<Emergenza[]>(`${this.baseUrl1}`+codiceEmergenza+`${this.baseUrl2}`+citta+`${this.baseUrl3}`+gruppoSanguigno,  {codiceEmergenza: codiceEmergenza, citta: citta, gruppoSanguigno: gruppoSanguigno});
+  inoltraRichiestaEmergenza(codiceEmergenza: string, citta: string, gruppoSanguigno: string, donatoriRichiesti: number): Observable<Emergenza[]>{
+    return this.http.post<Emergenza[]>(`${this.baseUrl1}`+codiceEmergenza+`${this.baseUrl2}`+citta+`${this.baseUrl3}`+gruppoSanguigno+`${this.baseUrl3a}`+donatoriRichiesti,  {codiceEmergenza: codiceEmergenza, citta: citta, gruppoSanguigno: gruppoSanguigno, donatoriRichiesti: donatoriRichiesti});
   }
 
 }

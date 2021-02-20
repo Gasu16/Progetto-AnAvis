@@ -16,6 +16,7 @@ export class SceglirichiestaComponent implements OnInit {
   codiceEmergenza!: string;
   citta!: string;
   gruppoSanguigno!: string;
+  donatoriRichiesti!: number;
   public scelta_emergenza_view!: string;
   sedeComponent!: SedeComponent;
   risposta1!: string;

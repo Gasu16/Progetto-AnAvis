@@ -15,6 +15,7 @@ export class EmergenzaComponent implements OnInit {
   codiceEmergenza!: string;
   citta!: string;
   gruppoSanguigno!: string;
+  donatoriRichiesti!: number;
   public emergenza_view!: string;
 
 
@@ -25,7 +26,7 @@ export class EmergenzaComponent implements OnInit {
 
   inviaRichiesta(): void{ 
 
-    this.emergenzaService.inoltraRichiestaEmergenza(this.codiceEmergenza, this.citta, this.gruppoSanguigno).subscribe(
+    this.emergenzaService.inoltraRichiestaEmergenza(this.codiceEmergenza, this.citta, this.gruppoSanguigno, this.donatoriRichiesti).subscribe(
       res => {location.reload},
       err => {alert("Errore in inviaRichiesta() in emergenza.component.ts")}
       //console.log(data);
