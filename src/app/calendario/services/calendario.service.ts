@@ -20,7 +20,7 @@ export class CalendarioService {
     return this.http.get<Calendario[]>(`${this.baseUrl}`+codice);
   }
 
-  postDate(id: number): Observable<Calendario[]>{
-    return this.http.post<Calendario[]>(`${this.adate}`+id , id);
+  postDate(id: number, data: string, codice: string): Observable<Calendario[]>{
+    return this.http.post<Calendario[]>(`${this.adate}`+id+`&data=`+data+`&codice=`+codice , {id: id, data: data,  codice: codice});
   }
 }

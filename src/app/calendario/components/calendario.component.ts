@@ -17,7 +17,7 @@ export class CalendarioComponent implements OnInit {
   data!: string; // Questa è una data (singola)
   dati!: string; // Questi sono i dati
   codice!: string;
-
+  codiceFiscale!: string;
   constructor(
     private router: Router,
     private route: ActivatedRoute,

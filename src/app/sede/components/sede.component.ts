@@ -15,15 +15,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class SedeComponent implements OnInit {
 
+  ind!: number;
   id!: number;
   sedi!: Sede[];
   codice!: string;
   data!: string;
+  codiceFiscale!: string;
 //  dateCal!: CalendarioComponent;
   date!: Calendario[]; // Lista di date Calendario
   public view!: string;
 
-
+  
   risposta1!: string;
   risposta2!: string;
   risposta3!: string;
@@ -72,7 +74,7 @@ export class SedeComponent implements OnInit {
   }
 
   buttonClick(): void{
-    
+
     // Questo è quello che succede quando premiamo il bottone SCEGLI SEDE
     let url = "http://localhost:8080/api/sedi"
     let urladd = "http://localhost:8080/api/delsede?codice="
@@ -83,16 +85,57 @@ export class SedeComponent implements OnInit {
       console.log("BUTTON DATA\n");
       console.log(data);
       this.date = data;
+      this.ind = this.id;
       this.changeView('2');
     });
 
   }
 
   inviaData(): void{
+    let newId = this.id;
+    let newData = this.data;
+    let newCodice = this.codice;
+    let i = 0;
+    while(this.id != this.date[i].id){
+      i++;
+    }
+    newId = this.date[i].id;
+    newData = this.date[i].data;
+    newCodice = this.date[i].codice;
+
+/*
+
+    while(i < this.date.length){
+      if(this.id == this.date[i].id){
+        // Abbiamo trovato il nostro ID
+        console.log("Siamo nell IF");
+        newId = this.date[i].id;
+        newData = this.date[i].data;
+        newCodice = this.date[i].codice;
+      }
+      i++;
+    }
+*/
+/*
+    if((this.id-1)>this.date.length){
+      console.log("siamo entrati nell'IF");
+      newId = this.date[this.id-1-this.date.length].id;
+      newData = this.date[this.id-1-this.date.length].data;
+      newCodice = this.date[this.id-1-this.date.length].codice;
+    }
+    else{
+      console.log("siamo entrati nell'else");
+      newId = this.date[this.id-1].id;
+      newData = this.date[this.id-1].data;
+      newCodice = this.date[this.id-1].codice;
+    }
+*/
+    //console.log(this.date[this.id-1].id);
+    console.log(this.date);
     console.log("Ecco la data: ");
     console.log(this.data);
     let urlpostdate = "http://localhost:8080/api/deldata?id=";
-    this.calendarioService.postDate(this.id).subscribe(
+    this.calendarioService.postDate(newId, newData, newCodice).subscribe(
             
       res => {location.reload},
       err => {alert("Errore in inviaData() in sede.component.ts")}
