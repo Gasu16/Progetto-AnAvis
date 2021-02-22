@@ -1,3 +1,4 @@
+import { VisualizzaprenotazioniComponent } from './visualizzaprenotazioni/components/visualizzaprenotazioni.component';
 import { SceglirichiestaComponent } from './sceglirichiesta/components/sceglirichiesta.component';
 import { EmergenzaComponent } from './emergenza/components/emergenza.component';
 import { CalendarioComponent } from './calendario/components/calendario.component';
@@ -17,7 +18,8 @@ export const routes: Routes = [
   {path: 'registrazione', component: RegistrazioneComponent},
   {path: 'date', component: CalendarioComponent},
   {path: 'addemergenza', component: EmergenzaComponent},
-  {path: 'scegliemergenza', component: SceglirichiestaComponent}
+  {path: 'scegliemergenza', component: SceglirichiestaComponent},
+  {path: 'visualizzaprenotazioni', component: VisualizzaprenotazioniComponent}
   //{path: '**', redirectTo: ''}
 ];
 

@@ -1,0 +1,59 @@
+
+
+<form name="form" #f="ngForm" (ngSubmit)="inoltraDatiPrenotazioni()" *ngIf="view_prenotazioni=='1'">
+
+    <div class="form-group">
+
+        <label for="codice">CITTÀ</label>
+        <input type="text"
+        id="citta"
+        class="form-control"
+        name="citta"
+        placeholder="città"
+        [(ngModel)]=citta/>
+
+        <label for="codice">DATA</label>
+        <input type="text"
+        id="data"
+        class="form-control"
+        name="data"
+        placeholder="data"
+        [(ngModel)]=data/>
+        
+        
+        <button type="submit">
+            INVIA RICHIESTA
+        </button>
+    </div>
+</form>
+
+
+<div class="container" *ngIf="view_prenotazioni=='2'">
+    <div class="card">
+        <h3> PRENOTAZIONI </h3>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <th>PRENOTAZIONI</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let visuals of prenotazioni">
+                        <td>
+                            ID:
+                            {{visuals.id}}
+                            --
+                            DATA
+                            {{visuals.data}}
+                            --
+                            CITTA
+                            {{visuals.citta}}
+                            --                           
+                            CODICE
+                            {{visuals.codice}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

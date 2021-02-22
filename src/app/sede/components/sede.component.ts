@@ -21,6 +21,7 @@ export class SedeComponent implements OnInit {
   codice!: string;
   data!: string;
   codiceFiscale!: string;
+  citta!: string;
 //  dateCal!: CalendarioComponent;
   date!: Calendario[]; // Lista di date Calendario
   public view!: string;
@@ -95,6 +96,7 @@ export class SedeComponent implements OnInit {
     let newId = this.id;
     let newData = this.data;
     let newCodice = this.codice;
+    let newCitta = this.citta;
     let i = 0;
     while(this.id != this.date[i].id){
       i++;
@@ -102,40 +104,13 @@ export class SedeComponent implements OnInit {
     newId = this.date[i].id;
     newData = this.date[i].data;
     newCodice = this.date[i].codice;
+    newCitta = this.date[i].citta;
 
-/*
-
-    while(i < this.date.length){
-      if(this.id == this.date[i].id){
-        // Abbiamo trovato il nostro ID
-        console.log("Siamo nell IF");
-        newId = this.date[i].id;
-        newData = this.date[i].data;
-        newCodice = this.date[i].codice;
-      }
-      i++;
-    }
-*/
-/*
-    if((this.id-1)>this.date.length){
-      console.log("siamo entrati nell'IF");
-      newId = this.date[this.id-1-this.date.length].id;
-      newData = this.date[this.id-1-this.date.length].data;
-      newCodice = this.date[this.id-1-this.date.length].codice;
-    }
-    else{
-      console.log("siamo entrati nell'else");
-      newId = this.date[this.id-1].id;
-      newData = this.date[this.id-1].data;
-      newCodice = this.date[this.id-1].codice;
-    }
-*/
-    //console.log(this.date[this.id-1].id);
     console.log(this.date);
     console.log("Ecco la data: ");
     console.log(this.data);
     let urlpostdate = "http://localhost:8080/api/deldata?id=";
-    this.calendarioService.postDate(newId, newData, newCodice).subscribe(
+    this.calendarioService.postDate(newId, newData, newCodice, newCitta).subscribe(
             
       res => {location.reload},
       err => {alert("Errore in inviaData() in sede.component.ts")}

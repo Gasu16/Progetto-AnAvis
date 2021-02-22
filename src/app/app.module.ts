@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { CalendarioComponent } from './calendario/components/calendario.component';
 import { QuestionarioComponent } from './questionario/components/questionario.component';
 import { SceglirichiestaComponent } from './sceglirichiesta/components/sceglirichiesta.component';
+import { VisualizzaprenotazioniComponent } from './visualizzaprenotazioni/components/visualizzaprenotazioni.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { SceglirichiestaComponent } from './sceglirichiesta/components/scegliric
     CalendarioComponent,
     QuestionarioComponent,
     SceglirichiestaComponent,
+    VisualizzaprenotazioniComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { SceglirichiestaComponent } from './sceglirichiesta/components/scegliric
         {path: 'registrazione', component: RegistrazioneComponent},
         {path: 'date', component: CalendarioComponent},
         {path: 'addemergenza', component: EmergenzaComponent},
-        {path: 'scegliemergenza', component: SceglirichiestaComponent}
+        {path: 'scegliemergenza', component: SceglirichiestaComponent},
+        {path: 'visualizzaprenotazioni', component: VisualizzaprenotazioniComponent}
       ]
     )
   ],

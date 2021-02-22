@@ -10,6 +10,7 @@ export class CalendarioService {
 
   private baseUrl = "http://localhost:8080/api/date/";
   private adate = "http://localhost:8080/api/deldata?id=";
+  private citta_data = "http://localhost:8080/api/prenotazioni/";
   constructor(private http: HttpClient) { }
 
   getDate(): Observable<Calendario[]>{
@@ -20,7 +21,8 @@ export class CalendarioService {
     return this.http.get<Calendario[]>(`${this.baseUrl}`+codice);
   }
 
-  postDate(id: number, data: string, codice: string): Observable<Calendario[]>{
-    return this.http.post<Calendario[]>(`${this.adate}`+id+`&data=`+data+`&codice=`+codice , {id: id, data: data,  codice: codice});
+  postDate(id: number, data: string, codice: string, citta: string): Observable<Calendario[]>{
+    return this.http.post<Calendario[]>(`${this.adate}`+id+`&data=`+data+`&codice=`+codice+`&citta=`+citta , {id: id, data: data,  codice: codice, citta: citta});
   }
+
 }
