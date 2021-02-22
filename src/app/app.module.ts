@@ -19,6 +19,7 @@ import { CalendarioComponent } from './calendario/components/calendario.componen
 import { QuestionarioComponent } from './questionario/components/questionario.component';
 import { SceglirichiestaComponent } from './sceglirichiesta/components/sceglirichiesta.component';
 import { VisualizzaprenotazioniComponent } from './visualizzaprenotazioni/components/visualizzaprenotazioni.component';
+import { AccettazioneemergenzeComponent } from './accettazioneemergenze/components/accettazioneemergenze.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { VisualizzaprenotazioniComponent } from './visualizzaprenotazioni/compon
     QuestionarioComponent,
     SceglirichiestaComponent,
     VisualizzaprenotazioniComponent,
+    AccettazioneemergenzeComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { VisualizzaprenotazioniComponent } from './visualizzaprenotazioni/compon
         {path: 'date', component: CalendarioComponent},
         {path: 'addemergenza', component: EmergenzaComponent},
         {path: 'scegliemergenza', component: SceglirichiestaComponent},
-        {path: 'visualizzaprenotazioni', component: VisualizzaprenotazioniComponent}
+        {path: 'visualizzaprenotazioni', component: VisualizzaprenotazioniComponent},
+        {path: 'accettazioneemergenze', component: AccettazioneemergenzeComponent}
       ]
     )
   ],
