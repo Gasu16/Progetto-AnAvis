@@ -12,8 +12,7 @@ import { EmergenzaComponent } from './emergenza/components/emergenza.component';
 import { DonatoreComponent } from './donatore/components/donatore.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/components/home.component';
-import { RegistrazioneComponent } from './registrazione/components/registrazione.component';
-import { LoginComponent } from './login/components/login.component';
+
 import { FormsModule } from '@angular/forms';
 import { CalendarioComponent } from './calendario/components/calendario.component';
 import { QuestionarioComponent } from './questionario/components/questionario.component';
@@ -30,8 +29,6 @@ import { AccettazioneemergenzeComponent } from './accettazioneemergenze/componen
     DonatoreComponent,
     SedeComponent,
     HomeComponent,
-    RegistrazioneComponent,
-    LoginComponent,
     CalendarioComponent,
     QuestionarioComponent,
     SceglirichiestaComponent,
@@ -48,13 +45,12 @@ import { AccettazioneemergenzeComponent } from './accettazioneemergenze/componen
       [
         {path: 'home', component: HomeComponent},
         {path: 'sedi', component: SedeComponent},
-        {path: 'registrazione', component: RegistrazioneComponent},
         {path: 'date', component: CalendarioComponent},
         {path: 'addemergenza', component: EmergenzaComponent},
         {path: 'scegliemergenza', component: SceglirichiestaComponent},
         {path: 'visualizzaprenotazioni', component: VisualizzaprenotazioniComponent},
         {path: 'accettazioneemergenze', component: AccettazioneemergenzeComponent},
-        {path: 'sceglirichiesta', component: SceglirichiestaComponent}
+//        {path: 'sceglirichiesta', component: SceglirichiestaComponent}
       ]
     )
   ],
