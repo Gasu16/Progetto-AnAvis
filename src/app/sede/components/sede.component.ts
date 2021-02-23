@@ -74,6 +74,9 @@ export class SedeComponent implements OnInit {
     return this.risultato_quiz;
   }
 
+
+
+
   buttonClick(): void{
 
     // Questo è quello che succede quando premiamo il bottone SCEGLI SEDE
@@ -82,6 +85,8 @@ export class SedeComponent implements OnInit {
     let urlgetdata = "http://localhost:8080/api/date" 
     console.log("Ecco il codice: ");
     console.log(this.codice);
+    console.log("Ecco il codice fiscale: ");
+    console.log(this.codiceFiscale);
     this.calendarioService.getDateBySede(this.codice).subscribe((data: Calendario[]) => {
       console.log("BUTTON DATA\n");
       console.log(data);
@@ -112,7 +117,7 @@ export class SedeComponent implements OnInit {
     console.log("Ecco la data: ");
     console.log(this.data);
     let urlpostdate = "http://localhost:8080/api/deldata?id=";
-    this.calendarioService.postDate(newId, newData, newCodice, newCitta, newCodiceFiscale).subscribe(
+    this.calendarioService.postDate(newId, newData, newCodice, newCitta, this.codiceFiscale).subscribe(
             
       res => {location.reload},
       err => {alert("Errore in inviaData() in sede.component.ts")}

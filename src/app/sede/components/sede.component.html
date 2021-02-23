@@ -61,6 +61,9 @@
         </div>
     </div>
     
+
+
+
     <form name="form" #f="ngForm" (ngSubmit)="buttonClick()" *ngIf="view=='1'">
         <div class="form-group">
             <label for="codice">CODICE</label>
@@ -70,6 +73,14 @@
             name="codice"
             placeholder="codice sede"
             [(ngModel)]=codice/>
+
+            <label for="codiceFiscale">INSERISCI CODICE FISCALE</label>
+            <input type="text"
+            id="codiceFiscale"
+            class="form-control"
+            name="codiceFiscale"
+            placeholder="codice fiscale"
+            [(ngModel)]=codiceFiscale/>
             
             <button type="submit">
                 SCEGLI SEDE
