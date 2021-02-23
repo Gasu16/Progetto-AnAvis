@@ -111,13 +111,13 @@ export class SedeComponent implements OnInit {
     newData = this.date[i].data;
     newCodice = this.date[i].codice;
     newCitta = this.date[i].citta;
-    newCodiceFiscale = this.date[i].codiceFiscale;
+    //newCodiceFiscale = this.date[i].codiceFiscale;
 
     console.log(this.date);
     console.log("Ecco la data: ");
     console.log(this.data);
     let urlpostdate = "http://localhost:8080/api/deldata?id=";
-    this.calendarioService.postDate(newId, newData, newCodice, newCitta, this.codiceFiscale).subscribe(
+    this.calendarioService.postDate(newId, newData, newCodice, newCitta, newCodiceFiscale).subscribe(
             
       res => {location.reload},
       err => {alert("Errore in inviaData() in sede.component.ts")}

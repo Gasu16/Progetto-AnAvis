@@ -27,11 +27,24 @@ export class AccettazioneemergenzeComponent implements OnInit {
     private http: HttpClient
   ) { }
 
-  ngOnInit(): void {
+  getAllEmergenze(): void{
     this.accettazioneEmergenzeService.getAccettazioniEmergenze().subscribe((dati: Emergenza[]) => {
+      console.log(dati);
+      this.emergenze = dati;      
+    });
+    this.view_emergenza = '3';
+  }
+
+  getEmergenzeByCitta(): void{
+    this.accettazioneEmergenzeService.getAccettazioniEmergenzeByCitta(this.citta).subscribe((dati: Emergenza[]) => {
       console.log(dati);
       this.emergenze = dati;
     });
+    this.view_emergenza = '3';
+  }
+
+  ngOnInit(): void {
+    this.view_emergenza = '1';
   }
 
 }

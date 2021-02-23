@@ -19,4 +19,8 @@ export class AccettazioneemergenzeService {
   getAccettazioniEmergenzeByID(id: number): Observable<Emergenza[]>{
     return this.http.get<Emergenza[]>(`${this.baseUrl}`+id);
   }
+
+  getAccettazioniEmergenzeByCitta(citta: string): Observable<Emergenza[]>{
+    return this.http.get<Emergenza[]>(`${this.baseUrl}`+citta);
+  }
 }

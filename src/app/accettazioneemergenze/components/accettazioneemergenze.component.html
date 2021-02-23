@@ -1,4 +1,37 @@
-<div class="container">
+<form name="form" #f="ngForm" (ngSubmit)="getAllEmergenze()" *ngIf="view_emergenza=='1'">
+    <br>
+    <br>
+    <div class="form-group">
+
+        <button type="submit">
+            VISUALIZZA TUTTO
+        </button>
+    </div>
+    <br>
+    <br>
+</form>
+
+<form name="form" #f="ngForm" (ngSubmit)="getEmergenzeByCitta()" *ngIf="view_emergenza=='1'">
+
+    <div class="form-group">
+
+        <label for="citta">VISUALIZZA LE EMERGENZE PER CITTÀ</label>
+        <input type="text"
+        id="citta"
+        class="form-control"
+        name="citta"
+        placeholder="città"
+        [(ngModel)]=citta/>        
+        
+        <button type="submit">
+            VISUALIZZA PER CITTÀ
+        </button>
+    </div>
+</form>
+
+
+
+<div class="container" *ngIf="view_emergenza=='3'">
     <div class="card">
         <h3> ACCETTAZIONE EMERGENZE </h3>
         <div class="card-body">

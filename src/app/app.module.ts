@@ -53,7 +53,8 @@ import { AccettazioneemergenzeComponent } from './accettazioneemergenze/componen
         {path: 'addemergenza', component: EmergenzaComponent},
         {path: 'scegliemergenza', component: SceglirichiestaComponent},
         {path: 'visualizzaprenotazioni', component: VisualizzaprenotazioniComponent},
-        {path: 'accettazioneemergenze', component: AccettazioneemergenzeComponent}
+        {path: 'accettazioneemergenze', component: AccettazioneemergenzeComponent},
+        {path: 'sceglirichiesta', component: SceglirichiestaComponent}
       ]
     )
   ],
