@@ -21,8 +21,8 @@ export class CalendarioService {
     return this.http.get<Calendario[]>(`${this.baseUrl}`+codice);
   }
 
-  postDate(id: number, data: string, codice: string, citta: string): Observable<Calendario[]>{
-    return this.http.post<Calendario[]>(`${this.adate}`+id+`&data=`+data+`&codice=`+codice+`&citta=`+citta , {id: id, data: data,  codice: codice, citta: citta});
+  postDate(id: number, data: string, codice: string, citta: string, codiceFiscale: string): Observable<Calendario[]>{
+    return this.http.post<Calendario[]>(`${this.adate}`+id+`&data=`+data+`&codice=`+codice+`&citta=`+citta+`&codiceFiscale=`+codiceFiscale , {id: id, data: data,  codice: codice, citta: citta, codiceFiscale: codiceFiscale});
   }
 
 }

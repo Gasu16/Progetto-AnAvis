@@ -19,6 +19,7 @@ export class VisualizzaprenotazioniComponent implements OnInit {
   prenotazioni!: Prenotazione[];
   data!: string;
   citta!: string;
+  codiceFiscale!: string;
   visualizzaPrenotazioni!: Visualizzaprenotazioni[];
   public view_prenotazioni!: string;
 

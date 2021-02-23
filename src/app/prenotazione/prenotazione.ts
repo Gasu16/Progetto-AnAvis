@@ -3,4 +3,5 @@ export class Prenotazione {
     codice!: String;
     citta!: string;
     data!: string;
+    codiceFiscale!: string;
 }

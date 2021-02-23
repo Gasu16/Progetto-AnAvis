@@ -3,4 +3,5 @@ export class Calendario {
     data!: string;
     codice!: string;
     citta!: string;
+    codiceFiscale!: string;
 }
