@@ -18,6 +18,7 @@ export class CalendarioComponent implements OnInit {
   dati!: string; // Questi sono i dati
   codice!: string;
   codiceFiscale!: string;
+  
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -26,7 +27,7 @@ export class CalendarioComponent implements OnInit {
   ) { }
 
   buttonData(): void{
-    let urldata = "http://localhost:8080/api/aggdate";
+
     this.calendarioService.getDateBySede(this.codice).subscribe((dati: Calendario[]) => {
       console.log("BUTTON DATA\n");
       console.log(dati);

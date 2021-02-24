@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { PrenotazioneService } from './../../prenotazione/services/prenotazione.service';
 import { Emergenza } from './../emergenza';
 import { EmergenzaService } from './../services/emergenza.service';
 import { Component, OnInit } from '@angular/core';
@@ -29,10 +28,6 @@ export class EmergenzaComponent implements OnInit {
     this.emergenzaService.inoltraRichiestaEmergenza(this.codiceEmergenza, this.citta, this.gruppoSanguigno).subscribe(
       res => {location.reload},
       err => {alert("Errore in inviaRichiesta() in emergenza.component.ts")}
-      //console.log(data);
-      //this.emergenze = data;
-      //this.emergenza_view = '1';
-      //this.elencaEmergenze();
     );
     
   }

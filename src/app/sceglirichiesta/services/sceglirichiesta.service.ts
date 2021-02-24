@@ -18,8 +18,6 @@ export class SceglirichiestaService {
   }
 
   postEmergenza(id: number, citta: string, gruppoSanguigno: string): Observable<Emergenza[]>{
-//    return this.http.post<Emergenza[]>(`${this.baseUrl2}`+id+`&codiceEmergenza=`+codiceEmergenza+`&citta=`+citta+`&grupposanguigno=`+gruppoSanguigno, id);
-//    return this.http.post<Emergenza[]>(`${this.baseUrl2}`+id, id);
     return this.http.post<Emergenza[]>(`${this.baseUrl2}`+id+`&citta=`+citta+`&gruppoSanguigno=`+gruppoSanguigno, id);
   }
 

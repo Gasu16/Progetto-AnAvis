@@ -1,3 +1,4 @@
+import { AnalisiComponent } from './analisi/components/analisi.component';
 import { AccettazioneemergenzeComponent } from './accettazioneemergenze/components/accettazioneemergenze.component';
 import { VisualizzaprenotazioniComponent } from './visualizzaprenotazioni/components/visualizzaprenotazioni.component';
 import { SceglirichiestaComponent } from './sceglirichiesta/components/sceglirichiesta.component';
@@ -20,8 +21,7 @@ export const routes: Routes = [
   {path: 'scegliemergenza', component: SceglirichiestaComponent},
   {path: 'visualizzaprenotazioni', component: VisualizzaprenotazioniComponent},
   {path: 'accettazioneemergenze', component: AccettazioneemergenzeComponent},
-//  {path: 'sceglirichiesta', component: SceglirichiestaComponent}
-  //{path: '**', redirectTo: ''}
+  {path: 'analisi', component: AnalisiComponent}
 ];
 
 @NgModule({

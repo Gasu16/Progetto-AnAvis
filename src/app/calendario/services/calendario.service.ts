@@ -10,7 +10,7 @@ export class CalendarioService {
 
   private baseUrl = "http://localhost:8080/api/date/";
   private adate = "http://localhost:8080/api/deldata?id=";
-  private citta_data = "http://localhost:8080/api/prenotazioni/";
+
   constructor(private http: HttpClient) { }
 
   getDate(): Observable<Calendario[]>{

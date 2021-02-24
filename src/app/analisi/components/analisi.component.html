@@ -1,0 +1,83 @@
+<form name="form" #f="ngForm" (ngSubmit)="postAnalisi()" *ngIf="view_analisi=='1'">
+    <div class="form-group">
+
+        <label for="codiceFiscale">INSERISCI CODICE FISCALE</label>
+        <input type="text"
+        id="codiceFiscale"
+        class="form-control"
+        name="codiceFiscale"
+        placeholder="codice fiscale"
+        [(ngModel)]=codiceFiscale/>
+
+        
+        <label for="codice">EMOGLOBINA</label>
+        <input type="text"
+        id="emoglobina"
+        class="form-control"
+        name="emoglobina"
+        placeholder="12-16 g/dl"
+        [(ngModel)]=emoglobina/>
+
+        <label for="codice">GLOBULI BIANCHI</label>
+        <input type="text"
+        id="globuli_bianchi"
+        class="form-control"
+        name="globuli_bianchi"
+        placeholder="4000-10000/ mm3"
+        [(ngModel)]=globuli_bianchi/>
+
+        <label for="codice">GLOBULI ROSSI</label>
+        <input type="text"
+        id="globuli_rossi"
+        class="form-control"
+        name="globuli_rossi"
+        placeholder="4000000-5500000/ mm3"
+        [(ngModel)]=globuli_rossi/>
+
+        <label for="codice">PIASTRINE</label>
+        <input type="text"
+        id="piastrine"
+        class="form-control"
+        name="piastrine"
+        placeholder="150000 – 450000/ µl"
+        [(ngModel)]=piastrine/>
+
+        <button type="submit">
+            INVIA DATI
+        </button>
+        </div>
+</form>
+
+
+<div class="container" *ngIf="view_analisi=='2'">
+    <div class="card">
+        <h3> DATE </h3>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <th>LISTA ANALISI</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let analis of analisi">
+                        <td>
+                                ID:
+                                {{analis.id}}
+                                --
+                                CODICE:
+                                {{analis.codiceFiscale}}
+                                --
+                                GLOBULI BIANCHI:
+                                {{analis.globuli_bianchi}}
+                                --
+                                GLOBULI ROSSI:
+                                {{analis.globuli_rossi}}
+                                --
+                                PIASTRINE:
+                                {{analis.piastrine}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

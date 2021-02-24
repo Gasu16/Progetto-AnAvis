@@ -77,9 +77,7 @@ export class SceglirichiestaComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.scelta_emergenza_view = '0';
-    //this.elencaEmergenze();
-    
+    this.scelta_emergenza_view = '0';    
   }
 
 }

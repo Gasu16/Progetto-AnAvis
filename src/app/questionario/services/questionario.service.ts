@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class QuestionarioService {
 
-  private baseUrl = "http://localhost:8080/api/sendrisposte/"
+
   constructor(private http: HttpClient) { }
   
 }

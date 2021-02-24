@@ -34,7 +34,7 @@ export class SedeComponent implements OnInit {
   risposta5!: string;
   risultato_quiz!: string;
   varb!: boolean;
-  //public view = '0';
+
   
   constructor(
     private router: Router,
@@ -44,11 +44,6 @@ export class SedeComponent implements OnInit {
     private http: HttpClient
   ) { }
 
-/*  onItemChange(value: string){
-    value = this.data;
-    console.log(value);
-  }*/
-
   gestisciQuiz(): string{
     
     console.log(this.risposta1);
@@ -56,7 +51,7 @@ export class SedeComponent implements OnInit {
     console.log(this.risposta3);
     console.log(this.risposta4);
     console.log(this.risposta5);
-//    this.risultato_quiz = (this.risposta1 && this.risposta2 && this.risposta3 && this.risposta4 && this.risposta5);
+
     if(
       (this.risposta1 === "true") ||
       (this.risposta2 === "true") ||
@@ -79,7 +74,6 @@ export class SedeComponent implements OnInit {
 
   buttonClick(): void{
 
-    // Questo è quello che succede quando premiamo il bottone SCEGLI SEDE
     let url = "http://localhost:8080/api/sedi"
     let urladd = "http://localhost:8080/api/delsede?codice="
     let urlgetdata = "http://localhost:8080/api/date" 
@@ -111,7 +105,7 @@ export class SedeComponent implements OnInit {
     newData = this.date[i].data;
     newCodice = this.date[i].codice;
     newCitta = this.date[i].citta;
-    //newCodiceFiscale = this.date[i].codiceFiscale;
+
 
     console.log(this.date);
     console.log("Ecco la data: ");
@@ -121,8 +115,6 @@ export class SedeComponent implements OnInit {
             
       res => {location.reload},
       err => {alert("Errore in inviaData() in sede.component.ts")}
-      //console.log("Sto inviando i dati al server...\n");
-      //console.log(d);
     );
     console.log("Sto inviando i dati al server...");
   }
@@ -135,7 +127,6 @@ export class SedeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // Questo avviene quando clicchiamo SEDI dal menù in alto
     this.view='0';
     this.sedeService.getSedi().subscribe((data: Sede[]) => {
       console.log(data);
