@@ -1,4 +1,4 @@
-# Progetto-AnAvis
+#PROGETTO-ANAVIS
 Progetto per l'esame di Ingegneria del software
 
 ITERAZIONE 1: 08/01/2021 – 22/01/2021
@@ -37,13 +37,13 @@ ITERAZIONE 2: 22/01/2021 – 05/02/2021
 
 ITERAZIONE 3: 05/02/2021 – 19/02/2021
 
-	-Descrizione nel dettaglio dei casi d’uso “Visualizza Prenotazione effettuate dai Donatori”, “Visualizza Richieste di Emergenza accettate”, “Visualizza Riepilogo Donazioni” [06/02]
+	-Descrizione nel dettaglio dei casi d’uso “Visualizza Prenotazione effettuate dai Donatori”, “Visualizza Richieste di Emergenza accettate”, “Inserisci Analisi del Sangue” [06/02]
 
 	-Modificato il Modello di Dominio per aggiunta nuovi casi d’uso. [08/02]
 
 	-Diagramma di Sequenza per “Visualizza Prenotazione effettuate dai Donatori” e “Visualizza Richieste di Emergenza accettate” [08/02]
 
-	-Diagramma di Sequenza per “Visualizza Riepilogo Donazioni” [09/02]
+	-Diagramma di Sequenza per “Inserisci Analisi del Sangue” [09/02]
 
 	-Diagramma delle Classi di Progetto [dal 08/02 al 09/02]
 
