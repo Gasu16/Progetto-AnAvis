@@ -14,7 +14,6 @@ export class PrenotazioneComponent implements OnInit {
   constructor(private prenotazioneService: PrenotazioneService) { }
 
 
-
   ngOnInit(): void {
     this.prenotazioneService.getPrenotazioni().subscribe((data: Prenotazione[]) => {
       console.log(data);
